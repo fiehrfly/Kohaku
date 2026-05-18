@@ -43,12 +43,12 @@ For an open-source tool / dependency:
 - CHANGELOG maintenance
 - License (MIT / Apache 2.0 / BSD permissive; GPL/AGPL copyleft — verify before adopting)
 
-**Tools for this step:**
-- `mcp__jcodemunch__plan_turn` — opening move; get confidence + recommended files
-- `mcp__jcodemunch__get_repo_outline` / `get_file_tree` — structural map
-- `mcp__jcodemunch__get_repo_health` — calibrated quality signal
-- `mcp__jcodemunch__suggest_queries` — when repo is unfamiliar
-- `gh repo view` / GitHub API for external repos
+**Tools for this step** (use whichever your host provides — see `COMPATIBILITY.md`):
+- **Retrieval planner** — `mcp__jcodemunch__plan_turn`, your assistant's plan tool, or write the plan by hand
+- **Repo outline / file tree** — `mcp__jcodemunch__get_repo_outline` / `get_file_tree`, `tree -L 3`, `eza --tree`, or `git ls-files \| head -50`
+- **Repo health signal** — `mcp__jcodemunch__get_repo_health` if available; otherwise skip and read the CI config + last 20 commits manually
+- **Query suggestions** — `mcp__jcodemunch__suggest_queries` if available; otherwise write the queries yourself
+- **External repos** — `gh repo view`, GitHub API, or the GitHub web UI
 
 **Stars are vanity. Look at activity.**
 
@@ -56,7 +56,7 @@ For an open-source tool / dependency:
 
 **Identify the specific leverage point.** What is undervalued, overlooked, or misunderstood?
 
-In a codebase: the function everyone is afraid to touch is usually the most important one to understand. Map its `find_references` and `get_blast_radius` before going further.
+In a codebase: the function everyone is afraid to touch is usually the most important one to understand. Map its references and blast radius before going further (LSP `references`, `rg -F`, or `mcp__jcodemunch__find_references` / `get_blast_radius` if available).
 
 In tool selection: the library with 800 stars and active maintenance frequently beats the one with 8000 stars and a last commit from 2021.
 

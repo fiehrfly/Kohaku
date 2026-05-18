@@ -34,10 +34,10 @@ Check:
 
 Common failure: a developer adds a utility that already exists 50 lines deep in a sibling module under a slightly different name.
 
-Check:
-- `mcp__jcodemunch__search_symbols` with the operation name and synonyms
-- `mcp__jcodemunch__search_text` for the relevant strings
-- `mcp__jcodemunch__find_similar_symbols` for near-duplicates
+Check (use any code-search tool your host provides — see `COMPATIBILITY.md`):
+- **Symbol search** — `mcp__jcodemunch__search_symbols`, LSP `workspace/symbol`, `ctags + grep`, or `ast-grep` — try the operation name and synonyms
+- **Text search** — `mcp__jcodemunch__search_text`, `ripgrep`, or IDE project search — try the relevant strings
+- **Near-duplicates** — `mcp__jcodemunch__find_similar_symbols` if available, or fuzzy match (`rg -i`, `fzf` against ctags output)
 - The project's own utility modules (`utils/`, `lib/`, `common/`)
 
 If the utility exists but is named differently — rename towards convergence, don't duplicate.

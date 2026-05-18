@@ -10,7 +10,7 @@ Force [[shiro-mode]] on the objective above. Use when the problem is bounded —
 1. Load the `shiro-mode` skill.
 2. Run the enumeration:
    - Inputs, states, dependencies, error conditions, constraints
-   - Use `mcp__jcodemunch__plan_turn` / `search_symbols` / `get_blast_radius` / `find_references`
+   - Use your host's code-navigation tools (jCodemunch `plan_turn` / `search_symbols` / `get_blast_radius` / `find_references` if available; otherwise LSP, ripgrep, or your IDE's project search — see `COMPATIBILITY.md`)
 3. Build the decision tree — every branch, no skipping.
 4. Calculate which paths satisfy correctness, budget, and invariants.
 5. Collapse: eliminate failing paths until one remains.

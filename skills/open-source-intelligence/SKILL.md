@@ -64,7 +64,7 @@ Cross-check the registry's metadata against the GitHub repo's. Divergence (regis
 - Read at least: `package.json` / `Cargo.toml` / `pyproject.toml`, the main entry file, one test file, the CONTRIBUTING.md
 - Check for: dependency count and quality, test density, code style (does it match what you'd write?), commented-out code (often signals abandonment)
 
-For the top 2 candidates, compare *side by side* — `mcp__jcodemunch__index_folder` both into your local environment if useful.
+For the top 2 candidates, compare *side by side* — `git clone` both into a local sandbox and (if your assistant indexes repos, e.g. `mcp__jcodemunch__index_folder`) ingest them for navigation.
 
 ### 6. License check
 

@@ -33,11 +33,12 @@ List, do not guess:
 - Error conditions (every way it can fail)
 - Constraints (performance budget, memory, API contract, deployment surface)
 
-Use jCodemunch:
-- `mcp__jcodemunch__plan_turn` first — get confidence + recommended files
-- `mcp__jcodemunch__search_symbols` / `search_text` — narrow to the relevant surface
-- `mcp__jcodemunch__get_blast_radius` — what breaks if you change X
-- `mcp__jcodemunch__find_references` — every site that depends on the thing under change
+Use your host's code-navigation tools (see `COMPATIBILITY.md` for the full fallback table):
+
+- **Plan first** — `mcp__jcodemunch__plan_turn` (Claude Code + jCodemunch MCP), your assistant's retrieval planner, or write a one-paragraph plan by hand.
+- **Symbol / text search** — `mcp__jcodemunch__search_symbols` / `search_text`, LSP `workspace/symbol`, `ripgrep`, `ctags`, `ast-grep`, or IDE project search.
+- **Blast radius** — `mcp__jcodemunch__get_blast_radius`; or manual: find references and trace upward.
+- **Find references** — `mcp__jcodemunch__find_references`, LSP `textDocument/references`, or `rg -F '<symbol>'`.
 
 ### Step 2 — Enumerate the decision tree
 
@@ -103,8 +104,8 @@ Applied to code: **the analysis should make the recommendation obvious to a revi
 After Shiro mode delivers a recommendation, hand to:
 - [[sora-mode]] — wrap the calculation in the frame that gets it landed
 - [[blank-diagnostic]] — gate before executing
-- Ruflo testgen — turn the dismissed alternatives into regression tests
-- Ruflo coder — execute the surviving path
+- A test-author (e.g. Ruflo testgen, or your TDD discipline) — turn the dismissed alternatives into regression tests
+- A code-execution layer (e.g. Ruflo coder, your IDE assistant, or you the user) — execute the surviving path
 
 ## Related
 

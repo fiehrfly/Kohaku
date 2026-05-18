@@ -5,14 +5,14 @@
     "url": "https://github.com/fiehrfly"
   },
   "metadata": {
-    "description": "Strategic mastermind layer for Claude Code — encodes Garrett Gee's Hacker Mindset and Blank's (Sora + Shiro, No Game No Life) joint problem-solving methodology as composable skills. Designed to supplement /goal and sit above the Ruflo swarm without replacing it."
+    "description": "Strategic mastermind skill pack — native Claude Code plugin; portable to any AI coding assistant via COMPATIBILITY.md. Encodes Garrett Gee's Hacker Mindset and Blank's (Sora + Shiro, No Game No Life) joint problem-solving methodology as composable skills. Designed to supplement goal-binding and sit above your execution layer without replacing it."
   },
   "plugins": [
     {
       "name": "kohaku",
       "source": "./",
-      "description": "The mastermind that whispers before the move. Strategic framing + meta-game awareness + FOSS-first tool discovery for any coding task.",
-      "version": "0.1.0",
+      "description": "The mastermind that whispers before the move. Strategic framing + meta-game awareness + FOSS-first tool discovery for any coding task. Native Claude Code plugin; portable to Copilot CLI, Cursor, Cline, Gemini CLI, Codex, Continue.dev, and plain LLM chat.",
+      "version": "0.2.0",
       "author": {
         "name": "fiehrfly",
         "url": "https://github.com/fiehrfly"
@@ -27,14 +27,17 @@
         "strategy",
         "goal-augmentation",
         "meta-reasoning",
-        "ruflo-supplement"
+        "ruflo-supplement",
+        "ai-coding-assistant",
+        "portable"
       ],
       "category": "workflow",
       "tags": [
         "strategy",
         "methodology",
         "meta-reasoning",
-        "goal-orchestration"
+        "goal-orchestration",
+        "portable"
       ],
       "strict": false
     }

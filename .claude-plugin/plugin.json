@@ -1,7 +1,7 @@
 {
   "name": "kohaku",
-  "description": "Strategic mastermind layer for Claude Code. Combines Garrett Gee's Hacker Mindset with Blank's (Sora + Shiro from No Game No Life) unified problem-solving methodology. Sits above Ruflo's swarm: invoke before /goal for meta-game framing, during execution for cold-reads, and after for decision-record reporting. Favours free and open-source resources by default.",
-  "version": "0.1.0",
+  "description": "Strategic mastermind skill pack. Native Claude Code plugin; portable to Copilot CLI, Cursor, Cline, Gemini CLI, Codex, Continue.dev, and plain LLM chat via the COMPATIBILITY.md portability layer. Combines Garrett Gee's Hacker Mindset with Blank's (Sora + Shiro from No Game No Life) unified problem-solving methodology. Sits above your execution layer: invoke before goal-binding for meta-game framing, during execution for cold-reads, and after for decision-record reporting. Favours free and open-source resources by default.",
+  "version": "0.2.0",
   "author": {
     "name": "Marvin Colcol",
     "url": "https://github.com/fiehrfly"
@@ -20,6 +20,13 @@
     "goal-augmentation",
     "ruflo-supplement",
     "claude-code",
+    "copilot-cli",
+    "cursor",
+    "cline",
+    "gemini-cli",
+    "codex",
+    "ai-coding-assistant",
+    "portable",
     "strategy",
     "meta-reasoning"
   ]
