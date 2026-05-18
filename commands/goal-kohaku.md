@@ -1,11 +1,13 @@
 ---
 name: goal-kohaku
-description: Wrap /goal with the Kohaku Mastermind layer — strategic framing first, then Ruflo/OpenDesign/direct executor
+description: Wrap /goal (or any goal-binding directive) with the Kohaku Mastermind layer — strategic framing first, then your execution layer (Ruflo / OpenDesign / direct / IDE assistant)
 ---
 
 $ARGUMENTS
 
 Run `/goal` with the Kohaku Mastermind layer wrapped around it. Strategic framing happens *before* the goal decomposes into tasks.
+
+> **Portability note.** This command is the Claude Code installer. On other hosts, invoke the equivalent: load `skills/kohaku/SKILL.md`, then state your objective as a binding session goal. See `COMPATIBILITY.md`.
 
 ## Procedure
 
@@ -16,12 +18,12 @@ Run `/goal` with the Kohaku Mastermind layer wrapped around it. Strategic framin
    - Mode selection (Sora / Shiro / Blank)
    - Blank Diagnostic (all 10 questions answered)
    - Reconnaissance plan
-   - Execution handoff (Ruflo / OpenDesign / direct)
+   - Execution handoff (Ruflo / OpenDesign / direct; or, on non-Claude-Code hosts, your equivalent execution layer)
    - Success criteria
    - Failure-mode design (Deliberate Sacrifice)
    - Reporting plan
 3. **Then /goal** — Use the strategy document as `/goal`'s input. The goal's tasks now inherit the framing.
-4. **During execution** — If Ruflo or another executor signals uncertainty, fall back to Kohaku for re-framing. The Mastermind is on call.
+4. **During execution** — If Ruflo or any other executor signals uncertainty, fall back to Kohaku for re-framing. The Mastermind is on call.
 5. **At completion** — Run Hacker Helix Step 5 (Reporting / Exfiltration). PR description as decision record. Documentation as persistent Shiro analysis.
 
 ## When to use this instead of `/goal` directly

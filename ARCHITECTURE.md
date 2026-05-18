@@ -2,13 +2,15 @@
 
 ## Position in the stack
 
-Kohaku is the **strategic / mastermind layer**. It sits one level above:
+Kohaku is the **strategic / mastermind layer**. It sits one level above your execution layer — which on the author's personal machine is:
 
-- **Ruflo** — the multi-agent swarm methodology for big-project coding work
-- **OpenDesign** — the design-domain router
+- **Ruflo** — a multi-agent swarm methodology for big-project coding work
+- **OpenDesign** — a design-domain router
 - The **direct skill stack** — single-file work, specialist skills
 
-Kohaku does not compete with any of these. It decides which of them runs, with what framing, and how the result will be made durable.
+…but on any other system, "execution layer" simply means "whatever does the coding": your IDE agent, Copilot, Cursor's compose, a single-agent loop, or you the user typing into an editor. Kohaku does not compete with any of these. It decides which of them runs, with what framing, and how the result will be made durable.
+
+> **Portability.** This architecture diagram uses the author's Claude Code stack as the concrete example. The strategic protocols (Blank Protocol, Hacker Helix, the 10-question diagnostic) are framework-agnostic. See `COMPATIBILITY.md` for how Layer 2 (Kohaku itself) and Layer 3 (the executors) map onto other AI coding assistants.
 
 ```
 LAYER 1 — User / /goal command
@@ -91,20 +93,20 @@ When a `/goal` arrives at Layer 1, Kohaku (Layer 2) gets the first read. It:
 
 ## Layer-3 handoff matrix
 
-After Kohaku produces the strategy document, it hands off:
+After Kohaku produces the strategy document, it hands off. The "Handoff target" column lists the **author's Claude Code stack** as the concrete example. On any other host, substitute your equivalent — see the sibling-plugin reference table in `COMPATIBILITY.md`.
 
-| Work type | Handoff target |
-|---|---|
-| 3+ files, structured coding | Ruflo swarm (`/swarm` or `/ruflo-status`) |
-| UI / brand / visual design | OpenDesign router (`opendesign-router` skill) |
-| Single-file tweak | Direct skill stack |
-| Code review at PR boundary | `compound-engineering:ce-code-review` |
-| TDD-bound discipline | `superpowers:test-driven-development` |
-| Systematic debugging | `superpowers:systematic-debugging` |
-| Documentation | `document-skills:doc-coauthoring` |
-| Browser/UI testing | `document-skills:webapp-testing` |
-| Worktree isolation | `superpowers:using-git-worktrees` |
-| Plan-document writing | `superpowers:writing-plans` |
+| Work type | Handoff target (author's stack) | Portable substitute |
+|---|---|---|
+| 3+ files, structured coding | Ruflo swarm (`/swarm` or `/ruflo-status`) | Any multi-agent / single-agent coder, or you the user |
+| UI / brand / visual design | OpenDesign router (`opendesign-router` skill) | Any design tool / workflow |
+| Single-file tweak | Direct skill stack | Direct coding |
+| Code review at PR boundary | `compound-engineering:ce-code-review` | Your team's review process |
+| TDD-bound discipline | `superpowers:test-driven-development` | Standard TDD: red → green → refactor |
+| Systematic debugging | `superpowers:systematic-debugging` | Hypothesis → reproduce → bisect |
+| Documentation | `document-skills:doc-coauthoring` | Standard doc-authoring |
+| Browser/UI testing | `document-skills:webapp-testing` | Playwright / Cypress / Selenium |
+| Worktree isolation | `superpowers:using-git-worktrees` | `git worktree add` manually |
+| Plan-document writing | `superpowers:writing-plans` | Any plan template |
 
 ## Transparency on source material
 
@@ -140,18 +142,21 @@ After Kohaku produces the strategy document, it hands off:
 
 ## Versioning
 
+`v0.2.0` — portability pass. Skills decoupled from hardcoded jCodemunch MCP tool names; added `COMPATIBILITY.md` portability layer for Copilot CLI / Cursor / Cline / Gemini CLI / Codex / Continue.dev / plain LLM chat; sibling-plugin references made into explicit fallback chains; README and ARCHITECTURE reframed from "Claude Code plugin" to "AI-coding-assistant skill pack with Claude Code as primary native installer". No protocol changes — Blank Protocol and Hacker Helix bodies unchanged in substance.
+
 `v0.1.0` — initial scaffold. The plugin treats the published skill descriptions and command surface as stable; internal phrasing of each SKILL.md body may evolve in patch releases as the Blank Protocol is exercised against real workloads.
 
 When changing skill content significantly:
-1. Run pressure scenarios via subagents (see `superpowers:writing-skills` for the TDD-for-skills methodology)
+1. Run pressure scenarios via subagents (Claude Code: `superpowers:writing-skills` for the TDD-for-skills methodology; other hosts: pick a comparable skill-testing protocol or just dry-run the skill against representative tasks)
 2. Update `version` in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
-3. Note the change in `CHANGELOG.md` (to be added at first content-affecting release)
+3. Note the change in `CHANGELOG.md`
 
-## Out of scope (for v0.1.0)
+## Out of scope (for v0.2.0)
 
-- A `/kohaku-audit` command that retrospectively rates a completed PR against the Blank Diagnostic — planned for v0.2
-- Hooks that auto-engage Kohaku on `/goal` invocations matching certain patterns — planned for v0.2
-- A Ruflo agent file that mirrors `kohaku-mastermind` directly inside the Ruflo swarm — planned for v0.3 (waits on a Ruflo extension point)
+- A `/kohaku-audit` command that retrospectively rates a completed PR against the Blank Diagnostic — planned for v0.3
+- Hooks that auto-engage Kohaku on goal-binding invocations matching certain patterns — planned for v0.3
+- A Ruflo agent file that mirrors `kohaku-mastermind` directly inside the Ruflo swarm — planned for v0.4 (waits on a Ruflo extension point)
+- Native installers / packaging for non-Claude-Code hosts (e.g. a `kohaku.cursorrules` bundle, a Cline mode pack) — planned for v0.3; current portability is read-the-doc + manual setup
 
 ## Closing
 

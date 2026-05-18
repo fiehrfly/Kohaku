@@ -89,7 +89,7 @@ For those, Sora's social-frame work adds latency without value. Switch to Shiro.
 After Sora mode completes its cold-read, hand to:
 - [[shiro-mode]] — for the analytical layer
 - [[blank-diagnostic]] — for the pre-execution checklist
-- Ruflo coder/reviewer agents — for the execution
+- A code-execution layer (e.g. Ruflo coder/reviewer agents, your IDE assistant, or you the user) — for the execution
 
 The cold-read becomes input to whatever runs next. Document it (even briefly) so the next agent inherits the context.
 
