@@ -52,11 +52,19 @@ Kohaku fills that strategic gap. It runs the **Blank Protocol** — a discipline
 /plugin install kohaku@kohaku
 ```
 
-### Claude Code — manual
+Restart Claude Code (or open a new session) and `/kohaku`, `/blank`, `/sora`, `/shiro`, `/goal-kohaku` become available, along with all 10 skills.
+
+### Claude Code — local-dev install (for hacking on Kohaku)
+
+If you've cloned the repo and want to test local changes against Claude Code:
 
 ```bash
-git clone https://github.com/fiehrfly/Kohaku ~/.claude/plugins/cache/kohaku/kohaku/0.2.0
+git clone https://github.com/fiehrfly/Kohaku ~/Tools/kohaku
+/plugin marketplace add ~/Tools/kohaku
+/plugin install kohaku@kohaku
 ```
+
+> **Important:** `git clone` alone is not enough. Claude Code only sees a plugin after both `/plugin marketplace add <path-or-repo>` **and** `/plugin install <plugin>@<marketplace>` have run — those two commands write to `~/.claude/plugins/known_marketplaces.json` and `~/.claude/plugins/installed_plugins.json` respectively. Cloning into `~/.claude/plugins/cache/...` by itself silently does nothing.
 
 After install, the skills are available via the `Skill` tool and the commands via `/kohaku`, `/blank`, `/sora`, `/shiro`, `/goal-kohaku`.
 

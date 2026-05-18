@@ -2,6 +2,25 @@
 
 All notable changes to Kohaku are recorded here. Versioning follows [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] — 2026-05-18
+
+### Install pipeline fix — make `/kohaku` actually invocable
+
+v0.2.0 documented a manual install path (`git clone https://github.com/fiehrfly/Kohaku ~/.claude/plugins/cache/kohaku/kohaku/0.2.0`) that silently failed: cloning into the cache directory does **not** register the plugin in `~/.claude/plugins/known_marketplaces.json` or `~/.claude/plugins/installed_plugins.json`, so Claude Code never sees `/kohaku`, `/blank`, `/sora`, `/shiro`, or `/goal-kohaku`. v0.2.1 fixes the docs and hardens the plugin manifest.
+
+### Fixed
+- **README.md** — replaced the misleading "manual clone into cache" path with a correct local-dev install flow: `git clone` to a working directory, then `/plugin marketplace add <path>` + `/plugin install kohaku@kohaku`. Both writes (marketplace + install) are required for Claude Code to recognize the commands.
+- **COMPATIBILITY.md** — same correction in the per-host install section.
+
+### Changed
+- **`.claude-plugin/plugin.json`** — added explicit `commands`, `skills`, and `agents` path declarations. v0.2.0 relied on Claude Code's directory auto-discovery, which works on current versions but is fragile across plugin runtimes. Explicit paths are forward-compatible.
+- **`.claude-plugin/marketplace.json`** — bumped plugin version to 0.2.1.
+
+### Not changed
+- The Blank Protocol bodies, the Hacker Helix steps, all 10 skill files, the `kohaku-mastermind` subagent, and the COMPATIBILITY.md portability layer (Copilot CLI, Cursor, Cline / Roo Code, Gemini CLI, Codex, Continue.dev, plain LLM chat) are byte-for-byte unchanged. v0.2.1 is purely an install-pipeline fix.
+
+---
+
 ## [0.2.0] — 2026-05-17
 
 ### Portability pass — make Kohaku system-agnostic

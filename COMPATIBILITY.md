@@ -100,13 +100,17 @@ Wiki-links are intentionally retained because they round-trip safely across syst
 ### Claude Code (native)
 
 ```bash
-# Via marketplace
+# Via marketplace (recommended)
 /plugin marketplace add fiehrfly/Kohaku
 /plugin install kohaku@kohaku
 
-# Or clone
-git clone https://github.com/fiehrfly/Kohaku ~/.claude/plugins/cache/kohaku/kohaku/0.2.0
+# Or local-dev install (for hacking on Kohaku)
+git clone https://github.com/fiehrfly/Kohaku ~/Tools/kohaku
+/plugin marketplace add ~/Tools/kohaku
+/plugin install kohaku@kohaku
 ```
+
+Both flows register the plugin in `~/.claude/plugins/installed_plugins.json` and the marketplace in `~/.claude/plugins/known_marketplaces.json`. Cloning straight into `~/.claude/plugins/cache/...` without running `/plugin marketplace add` + `/plugin install` does not work — Claude Code never sees the plugin.
 
 ### Copilot CLI
 

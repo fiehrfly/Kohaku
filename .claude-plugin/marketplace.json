@@ -12,7 +12,7 @@
       "name": "kohaku",
       "source": "./",
       "description": "The mastermind that whispers before the move. Strategic framing + meta-game awareness + FOSS-first tool discovery for any coding task. Native Claude Code plugin; portable to Copilot CLI, Cursor, Cline, Gemini CLI, Codex, Continue.dev, and plain LLM chat.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "fiehrfly",
         "url": "https://github.com/fiehrfly"
