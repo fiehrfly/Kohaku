@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+*.swo
+node_modules/
+.in_use/
+*.bak
+*.orig
+.env
+.env.local
+ruvector.db

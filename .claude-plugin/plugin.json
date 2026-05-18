@@ -1,0 +1,26 @@
+{
+  "name": "kohaku",
+  "description": "Strategic mastermind layer for Claude Code. Combines Garrett Gee's Hacker Mindset with Blank's (Sora + Shiro from No Game No Life) unified problem-solving methodology. Sits above Ruflo's swarm: invoke before /goal for meta-game framing, during execution for cold-reads, and after for decision-record reporting. Favours free and open-source resources by default.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Marvin Colcol",
+    "url": "https://github.com/fiehrfly"
+  },
+  "homepage": "https://github.com/fiehrfly/Kohaku",
+  "repository": "https://github.com/fiehrfly/Kohaku",
+  "license": "MIT",
+  "keywords": [
+    "kohaku",
+    "blank-protocol",
+    "hacker-mindset",
+    "garrett-gee",
+    "no-game-no-life",
+    "sora",
+    "shiro",
+    "goal-augmentation",
+    "ruflo-supplement",
+    "claude-code",
+    "strategy",
+    "meta-reasoning"
+  ]
+}
